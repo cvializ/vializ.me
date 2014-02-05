@@ -21,21 +21,36 @@
 			</ul>
 		</header>
 		<div class="block">
-			<div class="centered">
-				<div data-bind="foreach: portfolio" style="">
-					<div class="portfolio-item">
-						<h3 data-bind="text: name"></h3>
-						<img style="width: 40%;" data-bind="attr: { src: preview }" />
-						<p data-bind="text: description"></p>
-						<a data-bind="attr: link, text: link.title"></a>
-					</div>
+			<div id="portfolio" class="centered" data-bind="foreach: portfolio" >
+				<div class="portfolio-item">
+					<h3 data-bind="text: name"></h3>
+					<!-- ko if: preview -->
+					<a data-bind="attr: link">
+						<img class="center" data-bind="attr: { src: preview }" />
+					</a>
+					<!-- /ko -->
+					<p data-bind="text: description"></p>
+					<a data-bind="attr: link, text: link.title"></a>
+					<h4>Features</h4>
+					<ul data-bind="foreach: features">
+						<li data-bind="text: $data"></li>
+					</ul>
+					<h4>Technologies</h4>
+					<ul data-bind="foreach: technologies">
+						<!-- ko if: typeof($data) === "object" -->
+						<li>
+							<a data-bind="attr: $data, text: $data.title">
+							</a>
+						</li>
+						<!-- /ko -->							
+						<!-- ko ifnot: typeof($data) === "object" -->
+						<li data-bind="text: $data"></li>
+						<!-- /ko -->
+					</ul>
 				</div>
 			</div>
 		</div>
 		<footer>
-			<p>
-				First name: <input data-bind="value: firstName"/>
-			</p>
 		</footer>
 	</body>
 </html>

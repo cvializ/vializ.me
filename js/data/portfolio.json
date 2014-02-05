@@ -4,19 +4,81 @@
 			"name": "Weight and Balance",
 			"link": { "href": "http://wab.vializ.me", "title": "Live Demo" },
 			"description": "A Javascript-based graphical weight and balance calculator for use in General Aviation",
-			"preview": "img/wab.png"
+			"preview": "img/wab.png",
+			"features": [
+				"Calculates an aircraft's Weight and Balance using official values from the aircraft's Pilot Operating Handbook.",
+				"The animated graph gives pilots a better feel for how added weight affects the center of gravity.",
+				"A pilot can instantly calculate whether the aircraft load is safe with dynamic field validation.",
+				"Multiple profiles allow a pilot to quickly switch loads between aircraft if the original reservation falls through.",
+				"I couldn't find anything similar for free on the Internet, so I made one myself."
+			],
+			"technologies": [
+				{ "title": "Hosted on Amazon EC2", "href": "http://ec2.amazon.com" },
+				{ "title": "Bootstrap", "href": "http://www.getbootstrap.com" },
+				{ "title": "D3", "href": "http://www.d3js.org" },
+				{ "title": "NVD3", "href": "http://www.nvd3.org" },
+				"Javascript"
+			]
 		},
 		{
-			"name": "WUVT Library",
+			"name": "WUVT Library Search",
 			"link": { "href": "http://wuvt.vializ.me", "title": "Live Demo" },
-			"description": "Allows DJs to access and richly search over 40,000 albums in WUVT's stacks of CDs and vinyl.",
-			"preview": "img/wuvtdb.png"
+			"description": "Provides a web interface for the database of albums at WUVT, Virginia Tech's campus radio station. DJs may access and richly search over 40,000 albums in WUVT's stacks of CDs and vinyl.",
+			"preview": "img/wuvtdb.png",
+			"features": [
+				"Integrates several web APIs for art, track lists, lyrics, curse-words, and more.",
+				"Saves valuable information on what DJs search for.",
+				"Allows DJs to fulfill song or album requests much more quickly.",
+				"DJs can plan their themed shows in advance by richly querying by stack, genre and year fields."
+			],
+			"technologies": [
+				{ "title": "Python Django", "href": "http://www.djangoproject.org" },
+				"MySQL"
+			]
 		},
 		{
 			"name": "M:SIS Korra",
 			"link": { "href": "http://vtmsis.w2k.vt.edu", "title": "Organization Page" },
-			"description": "Using Log-correlation techniques, Korra discovers the IP addresses of computers causing Virginia Tech user-account lockouts.",
-			"preview": null
+			"description": "Using Log-correlation techniques, Korra discovers the IP Addresses of computers causing Virginia Tech PID account lockouts.",
+			"preview": null,
+			"features": [
+				"Active Directory administrators can easily discover which of a user's multiple smart-devices triggers their account lockouts.",
+				"Korra exposes malicious computers, who are otherwise hidden, that trigger users' account lockouts during brute-force scans.",
+				"Log correlation techniques greatly reduce an Administrator's effort to search through AD and IIS logs across multiple formats.",
+				"Interactive front-end allows administrators and users to richly view their lockout data and history."
+			],
+			"technologies": [
+				"C#", "Microsoft SQLServer", "ASP.NET", "Active Directory", "LogParser2.2"
+			]
+		},
+		{
+			"name": "Optimal Satcom: Google Earth Signal Integration",
+			"link": { "href": "http://www.optimalsatcom.com/", "title": "Organization Page" },
+			"description": "",
+			"preview": "img/plot.png",
+			"features": [
+				"I converted existing legacy code (pictured above) to produce open-source GIS formatted plots suitable for Google Earth.",
+				"Customers may now view their satellite capacity without the distortion of map projections."
+			],
+			"technologies": [
+				"C#", "C++", "Google Earth"
+			]
+		},
+		{
+			"name": "Portfolio Website",
+			"link": { "href": "https://github.com/cvializ/vializ.me", "title": "Source Code" },
+			"description": "My personal portfolio website. You're here now!",
+			"preview": null,
+			"features": [
+				"Built with modern web technology.",
+				"Builds pages from data using KnockoutJS, separating structure from content."
+			],
+			"technologies": [
+				{ "title": "Hosted on Amazon EC2", "href": "http://ec2.amazon.com" },
+				{ "title": "KnockoutJS", "href": "http://www.knockoutjs.com" },
+				"HTML5",
+				"CSS3"
+			]
 		}
 	]
 }
