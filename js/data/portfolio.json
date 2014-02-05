@@ -76,6 +76,7 @@
 			"technologies": [
 				{ "title": "Hosted on Amazon EC2", "href": "http://ec2.amazon.com" },
 				{ "title": "KnockoutJS", "href": "http://www.knockoutjs.com" },
+				{ "title": "Masonry", "href": "http://masonry.desandro.com" },
 				"HTML5",
 				"CSS3"
 			]
