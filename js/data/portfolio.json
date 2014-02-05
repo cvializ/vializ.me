@@ -1,0 +1,22 @@
+{
+	"portfolio": [
+		{
+			"name": "Weight and Balance",
+			"link": { "href": "http://wab.vializ.me", "title": "Live Demo" },
+			"description": "A Javascript-based graphical weight and balance calculator for use in General Aviation",
+			"preview": "img/wab.png"
+		},
+		{
+			"name": "WUVT Library",
+			"link": { "href": "http://wuvt.vializ.me", "title": "Live Demo" },
+			"description": "Allows DJs to access and richly search over 40,000 albums in WUVT's stacks of CDs and vinyl.",
+			"preview": "img/wuvtdb.png"
+		},
+		{
+			"name": "M:SIS Korra",
+			"link": { "href": "http://vtmsis.w2k.vt.edu", "title": "Organization Page" },
+			"description": "Using Log-correlation techniques, Korra discovers the IP addresses of computers causing Virginia Tech user-account lockouts.",
+			"preview": null
+		}
+	]
+}

@@ -1,10 +1,12 @@
 require.config({
 	paths: {
-		knockout: 'vendor/knockout-3.0.0',
-		domReady: 'vendor/require/domReady'
+		domReady: 'vendor/require/domReady',
+		text: 'vendor/require/text',
+		json: 'vendor/require/json',
+		knockout: 'vendor/knockout/knockout-3.0.0'
 	}
 });
 
-require(['knockout', 'PortfolioViewModel', 'domReady!'], function(ko, PortfolioViewModel) {
-    ko.applyBindings(new PortfolioViewModel());
+define(['knockout', 'json!data/portfolio.json', 'domReady!'], function (ko, portfolio) {
+	ko.applyBindings(portfolio);
 });
