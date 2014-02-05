@@ -34,13 +34,19 @@ html {
   font-family: 'ABeeZee', sans-serif;
 }
 
+a {
+  color: orangered;
+}
+
+header a {
+  color: orangered;
+}
+
 a:link {
-	color: orangered;
 	text-decoration: underline
 }
 
 a:visited {
-	color: orangered;
 	text-decoration: underline;
 }
 
@@ -74,7 +80,7 @@ a:hover {
 }
 
 .portfolio-item {
-  background-color: rgba(255, 255, 255, .3);
+  background-color: rgba(255, 255, 255, .42);
   width: 45%;
   /* This element will be a little wider
   than 80% because of the padding */
