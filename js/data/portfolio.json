@@ -80,6 +80,21 @@
 				"HTML5",
 				"CSS3"
 			]
+		},
+		{
+			"name": "WUVT Radiothon Pledge System",
+			"link": { "href": "http://www.wuvt.vt.edu", "title": "Organization Page" },
+			"description": "A fundraising management system for WUVT Virginia Tech student radio.",
+			"preview": null,
+			"features": [
+				"Replaced an old system of paper forms, where pledge-takers could easily forget to add critical information.",
+				"The station Business Manager can easily and paperlessly see and fulfill donations.",
+				"Django models and forms allowed <acronym title=\"Don't Repeat Yourself\">DRY</acronym> development, validation and storing of pledge information."
+			],
+			"technologies": [
+				{ "title": "Python Django", "href": "http://www.djangoproject.org" },
+				{ "title": "jQuery", "href": "http://www.jquery.org" }
+			]
 		}
 	]
 }
