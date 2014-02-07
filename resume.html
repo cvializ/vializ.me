@@ -1,0 +1,51 @@
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
+		<link rel="shortcut icon" href="http://www.gravatar.com/avatar/400d6e7be8cee150748ceb9f9007c304?s=32">
+		<script src="js/vendor/require/require.js"></script>
+		<script>
+			require.config({
+				baseUrl: 'js',
+				paths: {
+					domReady: 'vendor/require/domReady',
+					PDFObject: 'vendor/pdfobject/pdfobject.min'
+				},
+				shim: {
+					PDFObject: {
+						exports: 'PDFObject'
+					}
+				}
+			});
+
+			require(['PDFObject', 'domReady!'], function (PDFObject) {
+				var pdf = new PDFObject({ url: 'VializCarlosResume.pdf' }).embed('resume');
+			});
+		</script>
+		<title>Carlos Alexander Vializ</title>
+	</head>
+	<body>
+		<header>
+			<h1 class="title">Carlos Alexander Vializ</h1>
+			<ul>
+				<li><a href="about.html">About</a></li>
+				<li><a href="portfolio.html">Portfolio</a></li>
+				<li><a href="resume.html">Resume</a></li>
+			</ul>
+			<ul>
+				<li><a href="http://github.com/cvializ/">GitHub</a></li>
+			</ul>
+		</header>
+		<div class="block">
+			<div class="centered">
+				<p>Click here to download my resume!</p>
+				<p><a href="VializCarlosResume.pdf">VializCarlosResume.pdf</a></p>
+				<div id="resume">
+				</div>
+			</div>
+		</div>
+		<footer>
+		</footer>
+	</body>
+</html>
