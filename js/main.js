@@ -9,15 +9,28 @@ require.config({
 	}
 });
 
-define(['knockout', 'masonry', 'imagesLoaded', 'json!data/portfolio.json', 'domReady!'], function (ko, Masonry, imagesLoaded, portfolio) {
+define(['knockout', 'masonry', 'imagesLoaded', 'json!data/portfolio.json', 'domReady!'],
+function (ko, Masonry, imagesLoaded, portfolio) {
 	ko.applyBindings(portfolio);
 	var container = document.querySelector('#portfolio');
+	
+	var children = container.children;
+	var className = 'portfolio-item-masonry';
+	for (var i = 0; i < children.length; i++) {
+		if (children[i].classList)
+		  children[i].classList.add(className);
+		else
+		  children[i].className += ' ' + className;
+	}
+
 	var msnry = new Masonry(container, {
 	  // options
-	  itemSelector: '.portfolio-item'
+	  itemSelector: '.portfolio-item',
+	  columnWidth: '.portfolio-item-masonry'
 	});
-	
+
 	imagesLoaded(container, function () {
 		msnry.layout();
 	});
+	
 });
