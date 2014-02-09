@@ -13,10 +13,10 @@ app.configure(function () {
 
   // load routes
   [
-    'index'//,
+    'index',
     //'about',
     //'portfolio',
-    //'resume'
+    'resume'
   ].map(function (controller) {
     require('./controllers/' + controller).configure(app);
   });
