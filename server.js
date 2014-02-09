@@ -1,20 +1,28 @@
 var express = require('express'),
+    consolidate = require('consolidate'),
     http = require('http'),
     path = require('path'),
     app = express();
 
 app.configure(function () {
   app.set('port', process.env.PORT || 3000);
-  //app.set('views', path.join(__dirname, 'views'));
+  app.set('views', path.join(__dirname, 'template'));
   app.set('view engine', 'html');
-  app.use(express.favicon());
+  app.engine('.html', consolidate.handlebars);
   app.use(express.logger('dev'));
-  app.use(express.json());
-  app.use(express.urlencoded());
-  app.use(express.bodyParser());
 
+  // load routes
+  [
+    'index'//,
+    //'about',
+    //'portfolio',
+    //'resume'
+  ].map(function (controller) {
+    require('./controllers/' + controller).configure(app);
+  });
+
+  app.use('/', express.static(path.join(__dirname, 'public')));
   app.use(app.router);
-  app.use('/', express.static(path.join(__dirname)));
   // development only
   if ('development' == app.get('env')) {
     app.use(express.errorHandler());
