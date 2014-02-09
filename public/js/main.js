@@ -12,8 +12,8 @@ define(['knockout', 'masonry', 'json!data/portfolio.json', 'domReady!'], functio
 	ko.applyBindings(portfolio);
 	var container = document.querySelector('#portfolio');
 	var msnry = new Masonry(container, {
-	  // options
-	  itemSelector: '.portfolio-item'
+	// options
+    itemSelector: '.portfolio-item'
 	});
 	msnry.layout();
 });
