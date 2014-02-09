@@ -15,7 +15,7 @@ function getData(cb) {
 
 module.exports = {
   configure: function (app) {
-    app.get('/', function (req, res) {
+    app.get('/portfolio', function (req, res) {
       getData(function (err, data) {
         if (err) {
           res.send(500);
@@ -23,7 +23,7 @@ module.exports = {
 
         res.render('base.html', {
           partials: {
-            body: 'index'
+            body: 'portfolio'
           },
           portfolio: data.portfolio
         });

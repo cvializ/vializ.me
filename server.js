@@ -13,9 +13,9 @@ app.configure(function () {
 
   // load routes
   [
-    'index',
+    //'index',
     'about',
-    //'portfolio',
+    'portfolio',
     'resume'
   ].map(function (controller) {
     require('./controllers/' + controller).configure(app);
