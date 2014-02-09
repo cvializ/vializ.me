@@ -2,9 +2,11 @@
 	<head>
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
 		<link rel="shortcut icon" href="http://www.gravatar.com/avatar/400d6e7be8cee150748ceb9f9007c304?s=32">
 		<script data-main="js/main" src="js/vendor/require/require.js"></script>
 		<title>Carlos Alexander Vializ</title>
+		<script data-main="js/main" src="js/vendor/require/require.js"></script>
 	</head>
 	<body>
 		<header>
@@ -18,7 +20,36 @@
 				<li><a href="http://github.com/cvializ/">GitHub</a></li>
 			</ul>
 		</header>
-		{{>body}}
+		<div class="block">
+			<div id="portfolio" class="centered" data-bind="foreach: portfolio" >
+				<div class="portfolio-item">
+					<h3 data-bind="text: name"></h3>
+					<!-- ko if: preview -->
+					<a data-bind="attr: link">
+						<img class="center" data-bind="attr: { src: preview }" />
+					</a>
+					<!-- /ko -->
+					<p data-bind="text: description"></p>
+					<a data-bind="attr: link, text: link.title"></a>
+					<h4>Features</h4>
+					<ul data-bind="foreach: features">
+						<li data-bind="html: $data"></li>
+					</ul>
+					<h4>Technologies</h4>
+					<ul data-bind="foreach: technologies">
+						<!-- ko if: typeof($data) === "object" -->
+						<li>
+							<a data-bind="attr: $data, text: $data.title">
+							</a>
+						</li>
+						<!-- /ko -->							
+						<!-- ko ifnot: typeof($data) === "object" -->
+						<li data-bind="text: $data"></li>
+						<!-- /ko -->
+					</ul>
+				</div>
+			</div>
+		</div>
 		<footer>
 		</footer>
 	</body>
