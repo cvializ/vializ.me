@@ -21,6 +21,10 @@ app.configure(function () {
     require('./controllers/' + controller).configure(app);
   });
 
+  app.get('/', function (req, res) {
+    res.redirect('/about');
+  });
+
   app.use('/', express.static(path.join(__dirname, 'public')));
   app.use(app.router);
   // development only

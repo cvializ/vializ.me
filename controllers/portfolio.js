@@ -13,21 +13,23 @@ function getData(cb) {
   });
 }
 
+function render(req, res) {
+  getData(function (err, data) {
+    if (err) {
+      res.send(500);
+    }
+
+    res.render('base.html', {
+      partials: {
+        body: 'portfolio'
+      },
+      portfolio: data.portfolio
+    });
+  });
+}
+
 module.exports = {
   configure: function (app) {
-    app.get('/portfolio', function (req, res) {
-      getData(function (err, data) {
-        if (err) {
-          res.send(500);
-        }
-
-        res.render('base.html', {
-          partials: {
-            body: 'portfolio'
-          },
-          portfolio: data.portfolio
-        });
-      });
-    });
+    app.get('/portfolio', render);
   }
 };

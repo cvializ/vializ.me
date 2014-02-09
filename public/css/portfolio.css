@@ -1,3 +1,7 @@
+a.portfolio {
+  color: white;
+}
+
 .portfolio-item {
   background-color: rgba(255, 255, 255, .42);
   display: inline-block;
