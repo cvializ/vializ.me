@@ -1,0 +1,15 @@
+.imagebar {
+  text-align: center;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  max-height: 180px;
+  overflow: hidden;
+  font-size: 0;
+}
+
+.imagebar img {
+  display: inline-block;
+  margin: 0;
+  height: 180px;
+  vertical-align: bottom;
+}

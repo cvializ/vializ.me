@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="css/resume.css">
 <script src="js/vendor/require/require.js"></script>
 <script>
   require.config({
@@ -14,14 +15,27 @@
   });
 
   require(['PDFObject', 'domReady!'], function (PDFObject) {
-    var pdf = new PDFObject({ url: 'pdf/VializCarlosResume.pdf' }).embed('resume');
+    var options = {
+      url: 'pdf/VializCarlosResume.pdf',
+      pdfOpenParams: {
+        navpanes: 0,
+        statusbar: 0,
+        view: 'FitH'
+      }
+    },
+    //pdf = new PDFObject(options).embed('resume');
   });
 </script>
 <div class="block">
   <div class="centered">
-    <p>Click here to download my resume!</p>
-    <p><a href="pdf/VializCarlosResume.pdf">VializCarlosResume.pdf</a></p>
+    <p>Click here to download my resume! <a href="pdf/VializCarlosResume.pdf">VializCarlosResume.pdf</a></p>
     <div id="resume">
+      <object data="pdf/VializCarlosResume.pdf#navpanes=0&amp;statusbar=0&amp;view=FitH" type="application/pdf" width="100%" height="100%">
+        <div class="error">
+          <p>If the resume PDF doesn't appear within a few seconds, your browser may not support embedded PDFs!</p>
+          <p>You can still <a href="pdf/VializCarlosResume.pdf">download my resume</a> to view it in your favorite PDF viewer!</p>
+        </div>
+      </object>
     </div>
   </div>
 </div>

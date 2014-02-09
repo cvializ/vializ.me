@@ -14,7 +14,7 @@ app.configure(function () {
   // load routes
   [
     'index',
-    //'about',
+    'about',
     //'portfolio',
     'resume'
   ].map(function (controller) {
