@@ -1,7 +1,7 @@
 {
 	"portfolio": [
 		{
-			"name": "Weight and Balance",
+			"name": "Aircraft Weight and Balance",
 			"link": { "href": "http://wab.vializ.me", "title": "Live Demo" },
 			"description": "A Javascript-based graphical weight and balance calculator for use in General Aviation",
 			"preview": "img/wab.png",
@@ -11,16 +11,16 @@
 				"A pilot can instantly calculate whether the aircraft load is safe with dynamic field validation.",
 				"Multiple profiles allow a pilot to quickly switch loads between aircraft if the original reservation falls through.",
 				"Runs Unit Tests with NodeJS to ensure correct weight and balance calculations.",
-				"I couldn't find anything similar for free on the Internet, so I made one myself."
+				"I couldn't find anything as powerful for free on the Internet, so I made one myself."
 			],
 			"technologies": [
-				{ "title": "Hosted on Amazon EC2", "href": "http://ec2.amazon.com" },
-				{ "title": "NodeJS", "href": "http://www.nodejs.org" },
-				{ "title": "Bootstrap", "href": "http://www.getbootstrap.com" },
-				{ "title": "D3", "href": "http://www.d3js.org" },
-				{ "title": "NVD3", "href": "http://www.nvd3.org" },
-				{ "title": "Mustache", "href": "http://mustache.github.io" },
-				{ "title": "RequireJS", "href": "http://www.requirejs.org" },
+				"EC2",
+				"Node",
+				"Bootstrap",
+				"D3",
+				"NVD3",
+				"Mustache",
+				"Require",
 				"Javascript"
 			]
 		},
@@ -36,7 +36,7 @@
 				"DJs can plan their themed shows in advance by richly querying by stack, genre and year fields."
 			],
 			"technologies": [
-				{ "title": "Python Django", "href": "http://www.djangoproject.org" },
+				"Django",
 				"MySQL"
 			]
 		},
@@ -75,13 +75,15 @@
 			"preview": null,
 			"features": [
 				"Built with modern web technology.",
-				"Builds pages from data using KnockoutJS, separating structure from content."
+				"Prepares pages from data using Handlebars templates, separating structure from content.",
+				"CSS and HTML5 allow graceful layout changes for mobile platforms."
 			],
 			"technologies": [
-				{ "title": "Hosted on Amazon EC2", "href": "http://ec2.amazon.com" },
-				{ "title": "KnockoutJS", "href": "http://www.knockoutjs.com" },
-				{ "title": "Masonry", "href": "http://masonry.desandro.com" },
-				{ "title": "RequireJS", "href": "http://www.requirejs.org" },
+				"EC2",
+				"Node",
+				"Handlebars",
+				"Masonry",
+				"Require",
 				"HTML5",
 				"CSS3"
 			]
@@ -97,9 +99,22 @@
 				"Django models and forms allowed <acronym title=\"Don't Repeat Yourself\">DRY</acronym> development, validation and storing of pledge information."
 			],
 			"technologies": [
-				{ "title": "Python Django", "href": "http://www.djangoproject.org" },
-				{ "title": "jQuery", "href": "http://www.jquery.org" }
+				"Django",
+				"jQuery"
 			]
 		}
-	]
+	],
+	"technologies": {
+		"EC2" : { "title": "Hosted on Amazon EC2", "href": "http://ec2.amazon.com" },
+		"Node": { "title": "NodeJS", "href": "http://www.nodejs.org" },
+		"Bootstrap": { "title": "Bootstrap", "href": "http://www.getbootstrap.com" },
+		"D3": { "title": "D3", "href": "http://www.d3js.org" },
+		"NVD3": { "title": "NVD3", "href": "http://www.nvd3.org" },
+		"Mustache": { "title": "Mustache", "href": "http://mustache.github.io" },
+		"Require": { "title": "RequireJS", "href": "http://www.requirejs.org" },
+		"Django": { "title": "Python Django", "href": "http://www.djangoproject.org" },
+		"jQuery": { "title": "jQuery", "href": "http://www.jquery.org" },
+		"Handlebars": { "title": "Handlebars", "href": "http://www.handlebarsjs.com" },
+		"Masonry": { "title": "Masonry", "href": "http://masonry.desandro.com" }
+	}
 }

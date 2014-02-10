@@ -19,6 +19,14 @@ function render(req, res) {
       res.send(500);
     }
 
+    // Convert the technology-name to a link.
+    // It's okay if we change the technologies array.
+    data.portfolio.forEach(function (portfolioItem) {
+      portfolioItem.technologies = portfolioItem.technologies.map(function (technology) {
+        return data.technologies[technology] || technology;
+      });
+    });
+
     res.render('base.html', {
       partials: {
         body: 'portfolio'
