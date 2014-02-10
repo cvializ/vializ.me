@@ -9,11 +9,10 @@ app.configure(function () {
   app.set('views', path.join(__dirname, 'template'));
   app.set('view engine', 'html');
   app.engine('.html', consolidate.handlebars);
-  app.use(express.logger('dev'));
+  app.use(express.logger());
 
-  // load routes
+  // Load routes
   [
-    //'index',
     'about',
     'portfolio',
     'resume'
@@ -21,12 +20,18 @@ app.configure(function () {
     require('./controllers/' + controller).configure(app);
   });
 
+  // Instead of having a dedicated index route,
+  // just redirect the root URL to the about page.
   app.get('/', function (req, res) {
     res.redirect('/about');
   });
 
+  // Serve static files.
   app.use('/', express.static(path.join(__dirname, 'public')));
+
+  // Use the router after initializing all the routes
   app.use(app.router);
+
   // development only
   if ('development' == app.get('env')) {
     app.use(express.errorHandler());

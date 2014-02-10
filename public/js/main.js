@@ -1,15 +1,13 @@
 require.config({
   paths: {
     domReady: 'vendor/require/domReady',
-    text: 'vendor/require/text',
-    json: 'vendor/require/json',
     masonry: 'vendor/masonry/masonry.pkgd.min',
     imagesLoaded: 'vendor/masonry/imagesloaded.pkgd.min'
   }
 });
 
-define(['masonry', 'imagesLoaded', 'json!data/portfolio.json', 'domReady!'],
-function (Masonry, imagesLoaded, portfolio) {
+define(['masonry', 'imagesLoaded', 'domReady!'],
+function (Masonry, imagesLoaded) {
   var container = document.querySelector('#portfolio');
   
   var children = container.children;

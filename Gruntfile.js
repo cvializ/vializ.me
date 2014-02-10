@@ -4,7 +4,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
       build: {
-        src: ['./*.js*', './js/*.js*', './js/aircraft/*.js*']
+        src: ['**/*.js', '!**/node_modules/**', '!**/vendor/**']
       }
     },
     express: {
