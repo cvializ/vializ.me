@@ -8,6 +8,7 @@
         <div id="img{{@index}}" class="lightbox">
           <img src="{{image}}" title="{{title}}"/>
           <p>{{title}}</p>
+          {{#if subtitle}}<p>{{subtitle}}</p>{{/if}}
         </div>
       </a>
   {{/each}}
