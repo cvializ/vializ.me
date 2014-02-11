@@ -7,6 +7,15 @@
   box-sizing: border-box;
 }
 
+html {   
+  background: url(../img/bg.jpg) repeat-y center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'ABeeZee', sans-serif;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -34,15 +43,6 @@ h1 {
 
 h2, h3, h4, h5, h6 {
 	font-family: 'ABeeZee', sans-serif;
-}
-
-html {   
-  background: url(../img/bg4.jpg) repeat-y center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  font-family: 'ABeeZee', sans-serif;
 }
 
 a {
