@@ -1,0 +1,21 @@
+{
+  "about": [
+    {
+      "title": "Me under an aquarium.",
+      "thumbnail": "http://www.gravatar.com/avatar/400d6e7be8cee150748ceb9f9007c304?s=160",
+      "image": "http://www.gravatar.com/avatar/400d6e7be8cee150748ceb9f9007c304?s=512"
+    },
+    {
+      "title": "Hiking with my sister.",
+      "image": "img/hiking.jpg"
+    },
+    {
+      "title": "My first long solo flight.",
+      "image": "img/solo.jpg"
+    },
+    {
+      "title": "Performing a steep turn.",
+      "image": "img/turning.jpg"
+    }
+  ]
+}

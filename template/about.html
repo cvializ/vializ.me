@@ -1,22 +1,32 @@
 <link rel="stylesheet" type="text/css" href="css/about.css">
 <div class="imagebar">
-  <img src="http://www.gravatar.com/avatar/400d6e7be8cee150748ceb9f9007c304?s=160" title="Me under an aquarium."/>
-  <img src="img/hiking.jpg" title="Hiking with my sister." />
-  <img src="img/solo.jpg" title="My first long solo flight."/>
-  <img src="img/turning.jpg" title="Performing a steep turn."/>
+  {{#each images}}
+    <a href="#img{{@index}}">
+      <img src="{{#if thumbnail }}{{thumbnail}}{{else}}{{image}}{{/if}}" title="{{title}}"/>
+    </a>
+      <a href="#_">
+        <div id="img{{@index}}" class="lightbox">
+          <img src="{{image}}" title="{{title}}"/>
+          <p>{{title}}</p>
+        </div>
+      </a>
+  {{/each}}
 </div>
 <div class="block">
   <div class="centered">
-    <h2>Hi there.</h2>
-    <p>I'm Carlos. I'm a Virginia Tech student in the class of 2014.</p>
-    <p>I have a lot of interests, including</p>
-    <ul>
-      <li>Flying</li>
-      <li>Radio DJ-ing</li>
-      <li>Skateboarding</li>
-      <li>Programming</li>
-      <li>Hiking</li>
-      <li>Community Service</li>
-    </ul>
+    <div class="item">
+      <h2>Hi there.</h2>
+      <p>I'm Carlos. I'm a Virginia Tech student in the class of 2014.</p>
+      <p>Here are some of my interests:</p>
+      <ul>
+        <li>Flying</li>
+        <li>Radio DJ-ing</li>
+        <li>Skateboarding</li>
+        <li>Programming</li>
+        <li>Hiking</li>
+        <li>Community Service</li>
+      </ul>
+      <p>Have a look around to find out more about me!</p>
+    </div>
   </div>
 </div>
