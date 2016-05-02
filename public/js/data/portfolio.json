@@ -26,7 +26,7 @@
     },
     {
       "name": "WUVT Library Search",
-      "link": { "href": "http://wuvt.vializ.me", "title": "Live Demo" },
+      "link": { "href": "https://github.com/cvializ/wuvtdb", "title": "Source Code" },
       "description": "Provides a web interface for the database of albums at WUVT, Virginia Tech's campus radio station. DJs may access and richly search over 40,000 albums in WUVT's stacks of CDs and vinyl.",
       "preview": "img/wuvtdb.png",
       "features": [
