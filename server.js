@@ -2,6 +2,7 @@ var express = require('express'),
     consolidate = require('consolidate'),
     http = require('http'),
     path = require('path'),
+    cors = require('cors'),
     app = express();
 
 app.configure(function () {
@@ -10,6 +11,7 @@ app.configure(function () {
   app.set('view engine', 'html');
   app.engine('.html', consolidate.handlebars);
   app.use(express.logger());
+  app.use(cors());
 
   // Load routes
   [
@@ -27,11 +29,15 @@ app.configure(function () {
   });
 
   // Serve static files.
+  app.use('/amp', express.static(path.join(__dirname, 'amp')));
+  app.use('/pwa', express.static(path.join(__dirname, 'pwa')));
+
+  // Serve static files.
   app.use('/', express.static(path.join(__dirname, 'public')));
+
 
   // Use the router after initializing all the routes
   app.use(app.router);
-
   // development only
   if ('development' == app.get('env')) {
     app.use(express.errorHandler());

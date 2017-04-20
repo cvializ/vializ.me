@@ -1,0 +1,76 @@
+<!doctype html>
+<html ⚡>
+<head>
+  <meta charset="utf-8">
+  <title>Projects</title>
+  <link rel="canonical" href="https://www.vializ.me/projects.amp.html">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  <style amp-custom>
+  .technologies li {
+    list-style: none;
+    display: inline;
+  }
+
+  .technologies li:after {
+    content: ','
+  }
+  .technologies li:last-child:after {
+    content: '';
+  }
+
+  .preview {
+    text-align: center;
+  }
+
+  @media (min-width: 640px) {
+    .preview {
+      text-align: left;
+      margin-left: 10px;
+    }
+  }
+  </style>
+</head>
+<body>
+<h1>Projects</h1>
+<amp-list src="https://cfff1276.ngrok.io/js/data/portfolio.json" items="portfolio" width="300" height="300" layout="responsive">
+  <template type="amp-mustache">
+    <div class="portfolio-item">
+      <h2>{{name}}</h2>
+      {{#preview}}
+      <div class="preview">
+        <amp-img src="/{{preview}}" layout="fixed" width="320" height="240"></amp-img>
+      </div>
+      {{/preview}}
+      <p>{{description}}</p>
+      <a href="{{link.href}}" title="{{link.title}}">{{link.title}}</a>
+      <h3>Features</h3>
+      <ul class="features">
+      {{#features}}
+        <li>{{.}}</li>
+      {{/features}}
+      </ul>
+      <h3>Technologies</h3>
+      <ul class="technologies">
+      {{#technologies}}
+        {{#href}}
+        <li>
+          <a href="{{href}}" title="{{title}}">{{title}}</a>
+        </li>
+        {{/href}}
+        {{^href}}
+          <li>{{.}}</li>
+        {{/href}}
+      {{/technologies}}
+      </ul>
+    </div>
+  </template>
+  <div overflow role=button aria-label="Show more" class="list-overflow">
+    Show more
+  </div>
+</amp-list>
+</body>
+</html>

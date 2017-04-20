@@ -1,0 +1,99 @@
+<!doctype html>
+<html ⚡>
+<head>
+  <meta charset="utf-8">
+  <title>About</title>
+  <link rel="canonical" href="https://www.vializ.me/about.amp.html">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-image-lightbox" src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js"></script>
+  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  <style amp-custom>
+  .a11y-spoken {
+    position: absolute;
+    left: -999px;
+  }
+  .amp-image-lightbox-caption {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 16px;
+    font-family: sans-serif;
+  }
+
+  amp-carousel {
+    max-width: 640px;
+    margin: auto;
+  }
+  </style>
+</head>
+<body>
+<h1>About</h1>
+<p>Hi there!</p>
+<p>I'm Carlos.</p>
+<p>Here are some of my interests:</p>
+<ul>
+  <li>Flying</li>
+  <li>Radio DJ-ing</li>
+  <li>Skateboarding</li>
+  <li>Programming</li>
+  <li>Hiking</li>
+  <li>Community Service</li>
+</ul>
+<amp-carousel autoplay layout="responsive" width="350" height="325" type="slides">
+  <figure>
+    <amp-img
+      class="image-gallery-item"
+      on="tap:lightbox"
+      role="button"
+      tabindex="0"
+      src="http://www.gravatar.com/avatar/400d6e7be8cee150748ceb9f9007c304?s=512"
+      alt="Me"
+      layout="responsive"
+      width="320"
+      height="320"></amp-img>
+    <figcaption class="a11y-spoken">Me</figcaption>
+  </figure>
+  <figure>
+    <amp-img
+      class="image-gallery-item"
+      on="tap:lightbox"
+      role="button"
+      tabindex="0"
+      src="/img/hiking.jpg"
+      alt="Hiking with my sister."
+      layout="responsive"
+      width="315"
+      height="350"></amp-img>
+    <figcaption class="a11y-spoken">Hiking with my sister.</figcaption>
+  </figure>
+  <figure>
+    <amp-img
+      class="image-gallery-item"
+      on="tap:lightbox"
+      role="button"
+      tabindex="0"
+      src="/img/solo.jpg"
+      alt="My first long solo flight."
+      layout="responsive"
+      width="720"
+      height="960"></amp-img>
+    <figcaption class="a11y-spoken">My first long solo flight. Don't worry, selfies are totally legal via 14 CFR Part 91.21</figcaption>
+  </figure>
+  <figure>
+    <amp-img
+      class="image-gallery-item"
+      on="tap:lightbox"
+      role="button"
+      tabindex="0"
+      src="/img/turning.jpg"
+      alt="Performing a steep turn."
+      layout="responsive"
+      width="960"
+      height="720"></amp-img>
+    <figcaption class="a11y-spoken">Performing a steep turn.</figcaption>
+  </figure>
+</amp-carousel>
+<amp-image-lightbox id="lightbox" layout="nodisplay"></amp-image-lightbox>
+</body>
+</html>

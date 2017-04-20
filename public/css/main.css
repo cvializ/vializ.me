@@ -7,13 +7,15 @@
   box-sizing: border-box;
 }
 
-html {   
-  background: url(../img/bg.jpg) repeat-y center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+html {
+  background: url(../img/bg.jpg) center center fixed;
   font-family: 'ABeeZee', sans-serif;
+}
+
+@media (min-width: 640px) {
+  html {
+    background-size: cover;
+  }
 }
 
 body {
@@ -23,8 +25,8 @@ body {
 
 header {
 	text-align: center;
-	background-color: black;
-	color: white;
+	background-color: #000;
+	color: #fff;
 	overflow: hidden;
 	padding: 16px;
 }
@@ -33,12 +35,17 @@ header li, header ul {
 	display: inline;
 }
 
-header h1 {
+.title {
 	margin: 2px;
 }
 
-h1 {
+.title {
+  font-size: 26px;
 	font-family: 'Cinzel Decorative', serif;
+}
+
+main {
+  padding: 5px;
 }
 
 h2, h3, h4, h5, h6 {
@@ -69,15 +76,15 @@ a:hover {
 .block {
   text-align: center;
 }
- 
+
 .block:before {
   content: '';
   /*display: inline-block;*//* Affects layout at small widths */
-  height: 60%; 
+  height: 60%;
   vertical-align: middle;
   margin-right: -0.25em; /* Adjusts for spacing */
 }
- 
+
 .centered {
   max-width: 1100px;
   display: inline-block;

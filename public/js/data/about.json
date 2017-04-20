@@ -1,22 +1,30 @@
 {
   "about": [
     {
-      "title": "Me under an aquarium.",
+      "title": "Me",
       "thumbnail": "http://www.gravatar.com/avatar/400d6e7be8cee150748ceb9f9007c304?s=160",
-      "image": "http://www.gravatar.com/avatar/400d6e7be8cee150748ceb9f9007c304?s=512"
+      "image": "http://www.gravatar.com/avatar/400d6e7be8cee150748ceb9f9007c304?s=512",
+      "width": "320",
+      "height": "320"
     },
     {
       "title": "Hiking with my sister.",
-      "image": "img/hiking.jpg"
+      "image": "/img/hiking.jpg",
+      "width": "647",
+      "height": "719"
     },
     {
       "title": "My first long solo flight.",
       "subtitle": "Don't worry, selfies are totally legal via 14 CFR Part 91.21",
-      "image": "img/solo.jpg"
+      "image": "/img/solo.jpg",
+      "width": "720",
+      "height": "960"
     },
     {
       "title": "Performing a steep turn.",
-      "image": "img/turning.jpg"
+      "image": "/img/turning.jpg",
+      "width": "960",
+      "height": "720"
     }
   ]
 }

@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="http://www.gravatar.com/avatar/400d6e7be8cee150748ceb9f9007c304?s=32">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <script async src="https://cdn.ampproject.org/shadow-v0.js"></script>
+  <script>
+  const DEFAULT_PAGE = 'about';
+  const ROOT_URL = 'http://localhost:3000/amp';
+  let currentAmpDoc = null;
+
+  const ampPromise = Promise.all([
+    new Promise(resolve => {
+      (window.AMP = window.AMP || []).push(resolve);
+    }),
+    new Promise(resolve => {
+      document.addEventListener('DOMContentLoaded', resolve);
+    })
+  ]);
+
+  ampPromise.then(_ => {
+    navigateHash(window.location.href);
+  })
+
+  window.addEventListener('hashchange', e => {
+    navigateHash(e.newURL);
+  });
+
+  function navigateHash(url) {
+    const hashIndex = url.indexOf('#');
+    const newHash = ~hashIndex ? url.slice(hashIndex + 1) : DEFAULT_PAGE;
+    openPage(newHash);
+  }
+
+  function openPage(page) {
+    const url = `${ROOT_URL}/${page}.amp.html`;
+    fetchDocument(url).then(doc => {
+      const containerElements = document.getElementsByClassName('container');
+      for (var i = 0; i < containerElements.length; i++) {
+        containerElements[i].classList.remove('container-visible');
+      }
+
+      let container = document.querySelector(`.container-${page}`);
+      if (!container) {
+        container = createContainer(page);
+        document.querySelector('main').appendChild(container);
+        currentAmpDoc = AMP.attachShadowDoc(container, doc, url, {mode: 'open'});
+      }
+
+      container.classList.add('container-visible');
+      document.documentElement.classList.remove('about', 'projects', 'resume');
+      document.documentElement.classList.add(page);
+    });
+  }
+
+  function createContainer(page) {
+    const container = document.createElement('div');
+    container.classList.add('container');
+    container.classList.add(`container-${page}`);
+    return container;
+  }
+
+  function fetchDocument(url) {
+    // unfortunately fetch() does not support retrieving documents,
+    // so we have to resort to good old XMLHttpRequest.
+    const xhr = new XMLHttpRequest();
+
+    return new Promise(function(resolve, reject) {
+      xhr.open('GET', url, true);
+      xhr.responseType = 'document';
+      xhr.setRequestHeader('Accept', 'text/html');
+      xhr.onload = () => {
+        resolve(xhr.responseXML);
+      };
+      xhr.send();
+    });
+  }
+  </script>
+  <style>
+  .container {
+    display: none;
+  }
+
+  .container-visible {
+    display: block;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    color: #222;
+    font-family: Georgia, serif;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+    padding: 15px 10px;
+    background-color: #f3f3f3;
+  }
+
+  @media (min-width: 640px) {
+    header {
+      justify-content: space-between;
+      flex-flow: row wrap;
+    }
+  }
+
+  header ul, header li {
+    display: inline;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  ul + ul {
+    margin-left: 10px;
+  }
+
+  h1, h2, h3, h4 {
+    font-weight: normal;
+  }
+
+  .container::shadow h1 {
+    font-size: 3em;
+    color: #444;
+  }
+
+  h2 {
+    color: #333;
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 1.25em;
+    color: #666;
+  }
+
+  main {
+    max-width: 800px;
+    margin: auto;
+    padding: 0 5px;
+  }
+
+  p {
+    line-height: 1.5em;
+  }
+
+  a:link {
+  	text-decoration: underline
+  }
+
+  a:visited {
+  	text-decoration: underline;
+  }
+
+  html.about a.about,
+  html.projects a.projects,
+  html.resume a.resume,
+  a:hover {
+  	text-decoration: none;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <span class="title">Carlos Alexander Vializ</span>
+    <nav>
+        <ul>
+        <li><a class="about" href="#about">About</a></li>
+        <li><a class="projects" href="#projects">Portfolio</a></li>
+        <li><a class="resume" href="#resume">Resume</a></li>
+      </ul>
+      <ul>
+        <li><a href="http://github.com/cvializ/">GitHub</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main></main>
+</body>
+</html>

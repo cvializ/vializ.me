@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/1.8.199/pdf_viewer.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/1.8.195/pdf.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/1.8.195/compatibility.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/1.8.195/pdf_viewer.js"></script>
+  <style>
+  html, body { margin: 0; padding: 0; }
+  .viewer-container {
+    transform-origin: top left;
+  }
+  </style>
+</head>
+<body>
+<p>Click here to download my resume! <a href="/pdf/VializCarlosResume.pdf">VializCarlosResume.pdf</a></p>
+<div class="viewer-container">
+  <div id="viewer" class="pdfViewer"></div>
+</div>
+<script>
+PDFJS.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/1.8.199/pdf.worker.min.js';
+const DEFAULT_URL = '/pdf/VializCarlosResume.pdf';
+const container = document.querySelector('.viewer-container');
+const pdfViewer = new PDFJS.PDFViewer({container});
+PDFJS.getDocument(DEFAULT_URL).then(pdfDocument => {
+  pdfViewer.setDocument(pdfDocument);
+  setTimeout(scaleToFit, 10);
+});
+
+function scaleToFit() {
+  const widthRatio = window.innerWidth / container.scrollWidth;
+  const heightRatio = window.innerHeight / container.scrollHeight
+  container.style.transform = `scale(${widthRatio})`;
+  container.style.height = `${window.innerHeight * heightRatio}px`;
+  postResize();
+}
+
+function postResize() {
+  window.parent.postMessage({
+    sentinel: 'amp',
+    type: 'embed-size',
+    height: document.body.scrollHeight,
+    width: document.body.scrollWidth,
+  }, '*');
+}
+</script>
